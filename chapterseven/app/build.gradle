@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.packt.chapterfour'
+    namespace 'com.packt.chapterseven'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.packt.chapterfour"
+        applicationId "com.packt.chapterseven"
         minSdk 24
         targetSdk 33
         versionCode 1
