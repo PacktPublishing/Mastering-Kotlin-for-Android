@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "chapterfive"
-include ':app'
+include(":app")
