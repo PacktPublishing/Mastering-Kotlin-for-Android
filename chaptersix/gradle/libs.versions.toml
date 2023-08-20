@@ -8,6 +8,10 @@ koinCompose = "3.4.6"
 junit = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
+retrofit = "2.9.0"
+retrofitSerialiazationConverter = "1.0.0"
+serializationJson = "1.5.1"
+coroutines = "1.7.3"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -26,8 +30,14 @@ koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", versio
 test-junit = { module = "junit:junit", version.ref = "junit" }
 test-junitExt = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
 test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
-test-compose-junit4 = { group = "androidx.compose.ui:ui-test-junit4", name = "uiTestJunit4" }
+test-compose-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+retrofit = { module = "com.squareup.retrofit2:retrofit" , version.ref = "retrofit" }
+retrofit-serialization = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofitSerialiazationConverter" }
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core" , version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android" , version.ref = "coroutines" }
+serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
 
 [bundles]
 compose = ["compose.ui", "compose.ui.graphics", "compose.ui.tooling", "compose.material3", "compose.viewmodel"]
 koin = ["koin-core", "koin-android", "koin-android-compose"]
+networking = ["retrofit", "retrofit-serialization", "serialization-json", "coroutines", "coroutines-android"]

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlinx-serialization")
 }
 
 android {
@@ -60,6 +61,7 @@ dependencies {
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
     implementation(libs.bundles.koin)
+    implementation(libs.bundles.networking)
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.junitExt)
     androidTestImplementation(libs.test.espresso)
