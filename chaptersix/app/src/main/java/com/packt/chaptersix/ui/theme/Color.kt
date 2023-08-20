@@ -1,4 +1,4 @@
-package com.packt.chapterfive.ui.theme
+package com.packt.chaptersix.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.packt.chapterfive.ui.theme
+package com.packt.chaptersix.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -81,7 +81,7 @@ private val LightColorScheme = darkColorScheme(
 )
 
 @Composable
-fun ChapterFiveTheme(
+fun ChapterSixTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

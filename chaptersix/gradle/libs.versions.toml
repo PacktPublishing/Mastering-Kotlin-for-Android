@@ -1,0 +1,33 @@
+[versions]
+coreKtx = "1.10.1"
+lifecycle = "2.6.1"
+activity = "1.7.2"
+composeBom = "2023.08.00"
+koin = "3.4.3"
+koinCompose = "3.4.6"
+junit = "4.13.2"
+junitExt = "1.1.5"
+espresso = "3.5.1"
+
+[libraries]
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koinCompose" }
+test-junit = { module = "junit:junit", version.ref = "junit" }
+test-junitExt = { module = "androidx.test.ext:junit", version.ref = "junitExt" }
+test-espresso = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+test-compose-junit4 = { group = "androidx.compose.ui:ui-test-junit4", name = "uiTestJunit4" }
+
+[bundles]
+compose = ["compose.ui", "compose.ui.graphics", "compose.ui.tooling", "compose.material3", "compose.viewmodel"]
+koin = ["koin-core", "koin-android", "koin-android-compose"]
