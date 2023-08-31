@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.bundles.compose)
     implementation(libs.bundles.koin)
     implementation(libs.bundles.networking)
+    implementation(libs.compose.navigation)
     testImplementation(libs.test.junit)
     androidTestImplementation(libs.test.junitExt)
     androidTestImplementation(libs.test.espresso)

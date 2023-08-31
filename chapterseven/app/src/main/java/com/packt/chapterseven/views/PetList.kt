@@ -1,6 +1,7 @@
 package com.packt.chapterseven.views
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
@@ -27,7 +28,7 @@ import com.packt.chapterseven.viewmodel.PetsViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
-fun PetList(modifier: Modifier) {
+fun PetList(modifier: Modifier, onPetClicked: (Cat) -> Unit) {
     val petsViewModel: PetsViewModel = koinViewModel()
     val petsUIState by petsViewModel.petsUIState.collectAsStateWithLifecycle()
 
@@ -48,7 +49,10 @@ fun PetList(modifier: Modifier) {
         ) {
             LazyColumn {
                 items(petsUIState.pets) { pet ->
-                    PetListItem(cat = pet)
+                    PetListItem(
+                        cat = pet,
+                        onPetClicked = onPetClicked
+                    )
                 }
             }
         }
@@ -62,7 +66,7 @@ fun PetList(modifier: Modifier) {
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun PetListItem(cat: Cat) {
+fun PetListItem(cat: Cat, onPetClicked: (Cat) -> Unit) {
     ElevatedCard(
         modifier = Modifier
             .fillMaxWidth()
@@ -72,6 +76,9 @@ fun PetListItem(cat: Cat) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 10.dp)
+                .clickable {
+                    onPetClicked(cat)
+                }
         ) {
             AsyncImage(
                 model = "https://cataas.com/cat/${cat.id}",
