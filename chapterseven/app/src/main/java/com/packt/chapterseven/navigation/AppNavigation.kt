@@ -1,11 +1,13 @@
 package com.packt.chapterseven.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.packt.chapterseven.views.FavoritePetsScreen
 import com.packt.chapterseven.views.PetDetailsScreen
 import com.packt.chapterseven.views.PetsScreen
 import kotlinx.serialization.encodeToString
@@ -13,20 +15,22 @@ import kotlinx.serialization.json.Json
 
 
 @Composable
-fun AppNavigation() {
-    val navController = rememberNavController()
-
+fun AppNavigation(
+    contentType: ContentType,
+    navHostController: NavHostController = rememberNavController()
+) {
     NavHost(
-        navController = navController,
-        startDestination =  Screens.PetsScreen.route
-    ){
+        navController = navHostController,
+        startDestination = Screens.PetsScreen.route
+    ) {
         composable(Screens.PetsScreen.route) {
             PetsScreen(
                 onPetClicked = { cat ->
-                    navController.navigate(
+                    navHostController.navigate(
                         "${Screens.PetDetailsScreen.route}/${Json.encodeToString(cat)}"
                     )
-                }
+                },
+                contentType = contentType
             )
         }
         composable(
@@ -36,13 +40,16 @@ fun AppNavigation() {
                     type = NavType.StringType
                 }
             )
-        ){
+        ) {
             PetDetailsScreen(
                 onBackPressed = {
-                    navController.popBackStack()
+                    navHostController.popBackStack()
                 },
                 cat = Json.decodeFromString(it.arguments?.getString("cat") ?: "")
             )
+        }
+        composable(Screens.FavoritePetsScreen.route) {
+            FavoritePetsScreen()
         }
     }
 }

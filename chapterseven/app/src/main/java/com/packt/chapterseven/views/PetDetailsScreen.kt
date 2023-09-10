@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -36,7 +35,7 @@ fun PetDetailsScreen(onBackPressed: () -> Unit, cat: Cat) {
                 title = {
                     Text(text = "Pet Details")
                 },
-                colors =  TopAppBarDefaults.smallTopAppBarColors(
+                colors = TopAppBarDefaults.smallTopAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
                 ),
                 navigationIcon = {
@@ -55,6 +54,7 @@ fun PetDetailsScreen(onBackPressed: () -> Unit, cat: Cat) {
         content = { paddingValues ->
             PetDetailsScreenContent(
                 modifier = Modifier
+                    .fillMaxWidth()
                     .padding(paddingValues),
                 cat = cat
             )
@@ -66,9 +66,7 @@ fun PetDetailsScreen(onBackPressed: () -> Unit, cat: Cat) {
 @Composable
 fun PetDetailsScreenContent(modifier: Modifier, cat: Cat) {
     Column(
-        modifier = modifier
-            .fillMaxSize()
-            .padding(16.dp),
+        modifier = modifier,
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
