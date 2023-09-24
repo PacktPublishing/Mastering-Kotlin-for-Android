@@ -1,5 +1,6 @@
 package com.packt.chaptereight.data
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -10,5 +11,7 @@ data class CatEntity(
     val owner: String,
     val tags: List<String>,
     val createdAt: String,
-    val updatedAt: String
+    val updatedAt: String,
+    @ColumnInfo(defaultValue = "0")
+    val isFavorite: Boolean
 )

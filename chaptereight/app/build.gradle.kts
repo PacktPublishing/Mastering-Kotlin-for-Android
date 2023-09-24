@@ -53,6 +53,10 @@ android {
             pickFirsts.add("META-INF/LGPL2.1")
         }
     }
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
 }
 
 dependencies {

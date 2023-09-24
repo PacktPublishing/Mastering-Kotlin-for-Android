@@ -21,7 +21,8 @@ class PetsRepositoryImpl(
                            owner = catEntity.owner,
                            tags = catEntity.tags,
                            createdAt = catEntity.createdAt,
-                           updatedAt = catEntity.updatedAt
+                           updatedAt = catEntity.updatedAt,
+                           isFavorite = catEntity.isFavorite
                        ) }
                }
                .onEach {
@@ -42,10 +43,42 @@ class PetsRepositoryImpl(
                         owner = it.owner,
                         tags = it.tags,
                         createdAt = it.createdAt,
-                        updatedAt = it.updatedAt
+                        updatedAt = it.updatedAt,
+                        isFavorite = it.isFavorite
                     ))
                 }
             }
+        }
+    }
+
+    override suspend fun updatePet(cat: Cat) {
+        withContext(dispatcher) {
+            catDao.update(CatEntity(
+                id = cat.id,
+                owner = cat.owner,
+                tags = cat.tags,
+                createdAt = cat.createdAt,
+                updatedAt = cat.updatedAt,
+                isFavorite = cat.isFavorite
+            ))
+        }
+    }
+
+    override suspend fun getFavoritePets(): Flow<List<Cat>> {
+        return withContext(dispatcher) {
+            catDao.getFavoriteCats()
+                .map { petsCached ->
+                    petsCached.map { catEntity ->
+                        Cat(
+                            id = catEntity.id,
+                            owner = catEntity.owner,
+                            tags = catEntity.tags,
+                            createdAt = catEntity.createdAt,
+                            updatedAt = catEntity.updatedAt,
+                            isFavorite = catEntity.isFavorite
+                        )
+                    }
+                }
         }
     }
 }

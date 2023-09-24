@@ -19,7 +19,8 @@ fun PetsScreenContent(
     modifier: Modifier,
     onPetClicked: (Cat) -> Unit,
     contentType: ContentType,
-    petsUIState: PetsUIState
+    petsUIState: PetsUIState,
+    onFavoriteClicked: (Cat) -> Unit
 ) {
     Column(
         modifier = modifier
@@ -41,11 +42,13 @@ fun PetsScreenContent(
                     onPetClicked = onPetClicked,
                     pets = petsUIState.pets,
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .fillMaxWidth(),
+                    onFavoriteClicked = onFavoriteClicked
                 )
             } else {
                 PetListAndDetails(
-                    pets = petsUIState.pets
+                    pets = petsUIState.pets,
+                    onFavoriteClicked = onFavoriteClicked
                 )
             }
 
