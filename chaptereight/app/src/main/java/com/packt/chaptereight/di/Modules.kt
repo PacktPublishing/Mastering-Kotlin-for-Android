@@ -7,10 +7,12 @@ import com.packt.chaptereight.data.CatsAPI
 import com.packt.chaptereight.data.PetsRepository
 import com.packt.chaptereight.data.PetsRepositoryImpl
 import com.packt.chaptereight.viewmodel.PetsViewModel
+import com.packt.chaptereight.workers.PetsSyncWorker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import org.koin.android.ext.koin.androidContext
+import org.koin.androidx.workmanager.dsl.worker
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -36,4 +38,6 @@ val appModules = module {
         ).build()
     }
     single { get<CatDatabase>().carDao() }
+    worker { PetsSyncWorker(get(), get(), get()) }
+
 }

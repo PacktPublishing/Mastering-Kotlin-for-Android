@@ -19,6 +19,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import androidx.window.layout.FoldingFeature
 import androidx.window.layout.WindowInfoTracker
+import androidx.work.Constraints
+import androidx.work.ExistingWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.packt.chaptereight.navigation.AppNavigationContent
 import com.packt.chaptereight.navigation.ContentType
 import com.packt.chaptereight.navigation.DeviceFoldPosture
@@ -28,6 +33,7 @@ import com.packt.chaptereight.navigation.isBookPosture
 import com.packt.chaptereight.navigation.isSeparating
 import com.packt.chaptereight.ui.theme.ChapterEightTheme
 import com.packt.chaptereight.views.PetsNavigationDrawer
+import com.packt.chaptereight.workers.PetsSyncWorker
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
@@ -37,6 +43,7 @@ class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        startPetsSync()
         val deviceFoldingPostureFlow = WindowInfoTracker.getOrCreate(this).windowLayoutInfo(this)
             .flowWithLifecycle(this.lifecycle)
             .map { layoutInfo ->
@@ -174,5 +181,22 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    private fun startPetsSync() {
+        val syncPetsWorkRequest = OneTimeWorkRequestBuilder<PetsSyncWorker>()
+            .setConstraints(
+                Constraints.Builder()
+                    .setRequiredNetworkType(NetworkType.CONNECTED)
+                    .setRequiresBatteryNotLow(true)
+                    .build()
+            )
+            .build()
+
+        WorkManager.getInstance(applicationContext).enqueueUniqueWork(
+            "PetsSyncWorker",
+            ExistingWorkPolicy.KEEP,
+            syncPetsWorkRequest
+        )
     }
 }

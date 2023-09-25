@@ -14,6 +14,7 @@ serializationJson = "1.5.1"
 coroutines = "1.7.3"
 okhttp3 = "4.11.0"
 room = "2.5.2"
+work = "2.8.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -47,6 +48,8 @@ androidx-window = "androidx.window:window:1.1.0"
 room-runtime = { module = "androidx.room:room-runtime" , version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+work-runtime = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
+workmanager-koin = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koin" }
 
 [bundles]
 compose = ["compose.ui", "compose.ui.graphics", "compose.ui.tooling", "compose.material3", "compose.viewmodel", "coil-compose", "compose-lifecycle"]

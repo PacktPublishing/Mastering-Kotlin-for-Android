@@ -3,7 +3,6 @@ package com.packt.chaptereight.data
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.withContext
 
 class PetsRepositoryImpl(
@@ -23,12 +22,8 @@ class PetsRepositoryImpl(
                            createdAt = catEntity.createdAt,
                            updatedAt = catEntity.updatedAt,
                            isFavorite = catEntity.isFavorite
-                       ) }
-               }
-               .onEach {
-                     if (it.isEmpty()) {
-                          fetchRemotePets()
-                     }
+                       )
+                   }
                }
         }
     }
