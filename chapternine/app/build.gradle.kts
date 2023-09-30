@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.packt.chaptereight"
+    namespace = "com.packt.chapternine"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.packt.chaptereight"
+        applicationId = "com.packt.chapternine"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
