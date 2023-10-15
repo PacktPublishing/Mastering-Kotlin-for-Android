@@ -72,6 +72,7 @@ dependencies {
     implementation(libs.androidx.window)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
+    debugImplementation(libs.leakcanary.android)
     ksp(libs.room.compiler)
     implementation(libs.work.runtime)
     implementation(libs.workmanager.koin)

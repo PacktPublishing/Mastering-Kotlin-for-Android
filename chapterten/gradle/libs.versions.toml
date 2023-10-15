@@ -51,6 +51,7 @@ room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 work-runtime = { module = "androidx.work:work-runtime-ktx", version.ref = "work" }
 workmanager-koin = { module = "io.insert-koin:koin-androidx-workmanager", version.ref = "koin" }
 work-testing = { module = "androidx.work:work-testing", version.ref = "work" }
+leakcanary-android = "com.squareup.leakcanary:leakcanary-android:2.12"
 
 [bundles]
 compose = ["compose.ui", "compose.ui.graphics", "compose.ui.tooling", "compose.material3", "compose.viewmodel", "coil-compose", "compose-lifecycle"]
