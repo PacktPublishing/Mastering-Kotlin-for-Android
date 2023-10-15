@@ -73,6 +73,8 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     debugImplementation(libs.leakcanary.android)
+    debugImplementation(libs.chucker)
+    releaseImplementation(libs.chucker.no.op)
     ksp(libs.room.compiler)
     implementation(libs.work.runtime)
     implementation(libs.workmanager.koin)
