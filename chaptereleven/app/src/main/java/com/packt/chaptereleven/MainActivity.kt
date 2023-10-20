@@ -89,8 +89,8 @@ class MainActivity : ComponentActivity() {
 
                     WindowWidthSizeClass.Medium -> {
                         navigationType = NavigationType.NavigationRail
-                        contentType = if (devicePosture is DeviceFoldPosture.BookPosture
-                            || devicePosture is DeviceFoldPosture.SeparatingPosture
+                        contentType = if (devicePosture is DeviceFoldPosture.BookPosture ||
+                            devicePosture is DeviceFoldPosture.SeparatingPosture
                         ) {
                             ContentType.ListAndDetail
                         } else {
@@ -120,7 +120,6 @@ class MainActivity : ComponentActivity() {
                                 PetsNavigationDrawer(
                                     onFavoriteClicked = {
                                         navController.navigate(Screens.FavoritePetsScreen.route)
-
                                     },
                                     onHomeClicked = {
                                         navController.navigate(Screens.PetsScreen.route)
@@ -148,7 +147,6 @@ class MainActivity : ComponentActivity() {
                                 PetsNavigationDrawer(
                                     onFavoriteClicked = {
                                         navController.navigate(Screens.FavoritePetsScreen.route)
-
                                     },
                                     onHomeClicked = {
                                         navController.navigate(Screens.PetsScreen.route)

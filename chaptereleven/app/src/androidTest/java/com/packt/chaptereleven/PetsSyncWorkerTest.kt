@@ -19,7 +19,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 @RunWith(AndroidJUnit4::class)
 class PetsSyncWorkerTest {
 
@@ -28,7 +27,7 @@ class PetsSyncWorkerTest {
 
     @Before
     fun setup() {
-        val config =  Configuration.Builder()
+        val config = Configuration.Builder()
             .setMinimumLoggingLevel(Log.DEBUG)
             .setExecutor(SynchronousExecutor())
             .build()
@@ -61,7 +60,8 @@ class PetsSyncWorkerTest {
         workManager.enqueueUniqueWork(
             "PetsSyncWorker",
             ExistingWorkPolicy.KEEP,
-            syncPetsWorkRequest).result.get()
+            syncPetsWorkRequest
+        ).result.get()
 
         // Get WorkInfo and outputData
         val workInfo = workManager.getWorkInfoById(syncPetsWorkRequest.id).get()

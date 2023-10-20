@@ -36,7 +36,7 @@ fun PetDetailsScreen(onBackPressed: () -> Unit, cat: Cat) {
                     Text(text = "Pet Details")
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
+                    containerColor = MaterialTheme.colorScheme.primary
                 ),
                 navigationIcon = {
                     IconButton(

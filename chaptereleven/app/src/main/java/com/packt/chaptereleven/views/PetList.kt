@@ -113,9 +113,8 @@ fun PetListItem(
                         Color.Red
                     } else {
                         Color.Gray
-                    },
+                    }
                 )
-
             }
         }
     }

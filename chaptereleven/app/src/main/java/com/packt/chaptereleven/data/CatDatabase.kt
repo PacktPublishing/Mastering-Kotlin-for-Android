@@ -13,6 +13,6 @@ import androidx.room.TypeConverters
     ]
 )
 @TypeConverters(PetsTypeConverters::class)
-abstract class CatDatabase: RoomDatabase() {
+abstract class CatDatabase : RoomDatabase() {
     abstract fun carDao(): CatDao
 }

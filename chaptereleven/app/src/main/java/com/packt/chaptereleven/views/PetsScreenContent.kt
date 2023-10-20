@@ -51,7 +51,6 @@ fun PetsScreenContent(
                     onFavoriteClicked = onFavoriteClicked
                 )
             }
-
         }
         AnimatedVisibility(
             visible = petsUIState.error != null

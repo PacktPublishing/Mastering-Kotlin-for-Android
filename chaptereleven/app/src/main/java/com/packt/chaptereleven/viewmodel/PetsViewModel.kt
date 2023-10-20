@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class PetsViewModel(
     private val petsRepository: PetsRepository
-): ViewModel() {
+) : ViewModel() {
     val petsUIState = MutableStateFlow(PetsUIState())
     private val _favoritePets = MutableStateFlow<List<Cat>>(emptyList())
     val favoritePets: StateFlow<List<Cat>> get() = _favoritePets
@@ -27,7 +27,7 @@ class PetsViewModel(
         petsUIState.value = PetsUIState(isLoading = true)
         viewModelScope.launch {
             petsRepository.getPets().asResult().collect { result ->
-                when (result ) {
+                when (result) {
                     is NetworkResult.Success -> {
                         petsUIState.update {
                             it.copy(isLoading = false, pets = result.data)

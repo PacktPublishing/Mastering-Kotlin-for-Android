@@ -6,25 +6,25 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 
 class PetsRepositoryImpl(
-    private  val catsAPI: CatsAPI,
+    private val catsAPI: CatsAPI,
     private val dispatcher: CoroutineDispatcher,
     private val catDao: CatDao
-): PetsRepository {
+) : PetsRepository {
     override suspend fun getPets(): Flow<List<Cat>> {
         return withContext(dispatcher) {
-           catDao.getCats()
-               .map { petsCached ->
-                   petsCached.map { catEntity ->
-                       Cat(
-                           id = catEntity.id,
-                           owner = catEntity.owner,
-                           tags = catEntity.tags,
-                           createdAt = catEntity.createdAt,
-                           updatedAt = catEntity.updatedAt,
-                           isFavorite = catEntity.isFavorite
-                       )
-                   }
-               }
+            catDao.getCats()
+                .map { petsCached ->
+                    petsCached.map { catEntity ->
+                        Cat(
+                            id = catEntity.id,
+                            owner = catEntity.owner,
+                            tags = catEntity.tags,
+                            createdAt = catEntity.createdAt,
+                            updatedAt = catEntity.updatedAt,
+                            isFavorite = catEntity.isFavorite
+                        )
+                    }
+                }
         }
     }
 
@@ -33,14 +33,16 @@ class PetsRepositoryImpl(
             val response = catsAPI.fetchCats("cute")
             if (response.isSuccessful) {
                 response.body()!!.map {
-                    catDao.insert(CatEntity(
-                        id = it.id,
-                        owner = it.owner,
-                        tags = it.tags,
-                        createdAt = it.createdAt,
-                        updatedAt = it.updatedAt,
-                        isFavorite = it.isFavorite
-                    ))
+                    catDao.insert(
+                        CatEntity(
+                            id = it.id,
+                            owner = it.owner,
+                            tags = it.tags,
+                            createdAt = it.createdAt,
+                            updatedAt = it.updatedAt,
+                            isFavorite = it.isFavorite
+                        )
+                    )
                 }
             }
         }
@@ -48,14 +50,16 @@ class PetsRepositoryImpl(
 
     override suspend fun updatePet(cat: Cat) {
         withContext(dispatcher) {
-            catDao.update(CatEntity(
-                id = cat.id,
-                owner = cat.owner,
-                tags = cat.tags,
-                createdAt = cat.createdAt,
-                updatedAt = cat.updatedAt,
-                isFavorite = cat.isFavorite
-            ))
+            catDao.update(
+                CatEntity(
+                    id = cat.id,
+                    owner = cat.owner,
+                    tags = cat.tags,
+                    createdAt = cat.createdAt,
+                    updatedAt = cat.updatedAt,
+                    isFavorite = cat.isFavorite
+                )
+            )
         }
     }
 

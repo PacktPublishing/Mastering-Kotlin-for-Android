@@ -20,7 +20,7 @@ import org.koin.androidx.compose.koinViewModel
 @Composable
 fun PetsScreen(
     onPetClicked: (Cat) -> Unit,
-    contentType: ContentType,
+    contentType: ContentType
 ) {
     val petsViewModel: PetsViewModel = koinViewModel()
     val petsUIState by petsViewModel.petsUIState.collectAsStateWithLifecycle()

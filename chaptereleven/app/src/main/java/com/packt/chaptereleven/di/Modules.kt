@@ -38,7 +38,7 @@ val appModules = module {
             .alwaysReadResponseBody(false)
             .build()
 
-       OkHttpClient.Builder()
+        OkHttpClient.Builder()
             .addInterceptor(chuckerInterceptor)
             .build()
     }
@@ -62,5 +62,4 @@ val appModules = module {
     }
     single { get<CatDatabase>().carDao() }
     worker { PetsSyncWorker(get(), get(), get()) }
-
 }

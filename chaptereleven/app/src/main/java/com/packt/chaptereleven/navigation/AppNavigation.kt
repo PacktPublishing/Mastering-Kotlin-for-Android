@@ -13,7 +13,6 @@ import com.packt.chaptereleven.views.PetsScreen
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
-
 @Composable
 fun AppNavigation(
     contentType: ContentType,

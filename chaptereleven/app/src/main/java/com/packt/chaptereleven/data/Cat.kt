@@ -1,6 +1,5 @@
 package com.packt.chaptereleven.data
 
-
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 

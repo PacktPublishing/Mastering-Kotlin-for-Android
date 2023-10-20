@@ -8,8 +8,8 @@ import com.packt.chaptereleven.data.PetsRepository
 class PetsSyncWorker(
     appContext: Context,
     workerParams: WorkerParameters,
-    private val  petsRepository: PetsRepository
-): CoroutineWorker(appContext, workerParams) {
+    private val petsRepository: PetsRepository
+) : CoroutineWorker(appContext, workerParams) {
 
     override suspend fun doWork(): Result {
         return try {

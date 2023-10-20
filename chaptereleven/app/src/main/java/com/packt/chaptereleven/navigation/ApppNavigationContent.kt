@@ -23,7 +23,7 @@ fun AppNavigationContent(
 ) {
     Row(
         modifier = Modifier
-            .fillMaxSize(),
+            .fillMaxSize()
     ) {
         AnimatedVisibility(
             visible = navigationType == NavigationType.NavigationRail
