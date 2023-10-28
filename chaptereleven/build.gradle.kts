@@ -6,6 +6,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0" apply false
     id("com.google.devtools.ksp") version "1.9.0-1.0.13" apply false
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.1"
 }
 
 subprojects {
@@ -16,5 +17,11 @@ subprojects {
         filter {
             exclude("**/generated/**")
         }
+    }
+
+    apply(plugin = "io.gitlab.arturbosch.detekt")
+    detekt {
+        parallel = true
+        config.setFrom(files("${project.rootDir}/config/detekt/detekt.yml"))
     }
 }
