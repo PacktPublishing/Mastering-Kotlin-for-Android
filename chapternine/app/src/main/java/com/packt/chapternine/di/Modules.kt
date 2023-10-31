@@ -9,12 +9,19 @@ import com.packt.chapternine.data.PetsRepositoryImpl
 import com.packt.chapternine.viewmodel.PetsViewModel
 import com.packt.chapternine.workers.PetsSyncWorker
 import kotlinx.coroutines.Dispatchers
+import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.workmanager.dsl.worker
 import org.koin.dsl.module
 import retrofit2.Retrofit
+@OptIn(ExperimentalSerializationApi::class)
+private val json = Json {
+    ignoreUnknownKeys = true
+    isLenient = true
+    explicitNulls = false
+}
 
 val appModules = module {
     single<PetsRepository> { PetsRepositoryImpl(get(), get(), get()) }
@@ -23,7 +30,7 @@ val appModules = module {
     single {
         Retrofit.Builder()
             .addConverterFactory(
-                Json.asConverterFactory(contentType = "application/json".toMediaType())
+                json.asConverterFactory(contentType = "application/json".toMediaType())
             )
             .baseUrl("https://cataas.com/api/")
             .build()

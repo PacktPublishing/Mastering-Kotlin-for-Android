@@ -19,6 +19,10 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.workmanager.dsl.worker
 import org.koin.dsl.module
 import retrofit2.Retrofit
+private val json = Json {
+    ignoreUnknownKeys = true
+    isLenient = true
+}
 
 val appModules = module {
     single<PetsRepository> { PetsRepositoryImpl(get(), get(), get()) }
@@ -45,7 +49,7 @@ val appModules = module {
     single {
         Retrofit.Builder()
             .addConverterFactory(
-                Json.asConverterFactory(contentType = "application/json".toMediaType())
+                json.asConverterFactory(contentType = "application/json".toMediaType())
             )
             .client(get())
             .baseUrl("https://cataas.com/api/")
