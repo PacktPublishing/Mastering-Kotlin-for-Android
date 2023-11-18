@@ -33,6 +33,7 @@ class PetsViewModel(
                             it.copy(isLoading = false, pets = result.data)
                         }
                     }
+
                     is NetworkResult.Error -> {
                         petsUIState.update {
                             it.copy(isLoading = false, error = result.error)
