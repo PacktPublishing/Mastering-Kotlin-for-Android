@@ -50,7 +50,8 @@ val appModules = module {
     single {
         Retrofit.Builder()
             .addConverterFactory(
-               json.asConverterFactory(contentType = "application/json".toMediaType()
+                json.asConverterFactory(
+                    contentType = "application/json".toMediaType()
                 )
             )
             .client(get())

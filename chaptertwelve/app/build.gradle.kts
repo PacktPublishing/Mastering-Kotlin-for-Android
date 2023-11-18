@@ -79,6 +79,7 @@ dependencies {
     implementation(libs.work.runtime)
     implementation(libs.workmanager.koin)
     testImplementation(libs.test.junit)
+    testImplementation(libs.bundles.test)
     androidTestImplementation(libs.test.junitExt)
     androidTestImplementation(libs.test.espresso)
     androidTestImplementation(platform(libs.compose.bom))
