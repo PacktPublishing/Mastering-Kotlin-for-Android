@@ -18,6 +18,7 @@ work = "2.8.1"
 mockWebServer = "5.0.0-alpha.2"
 coroutinesTest = "1.7.3"
 truth = "1.1.5"
+mockk = "1.13.3"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -60,9 +61,10 @@ chucker-no-op = "com.github.chuckerteam.chucker:library-no-op:4.0.0"
 test-mock-webserver = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "mockWebServer" }
 test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 test-truth = { module = "com.google.truth:truth", version.ref = "truth" }
+test-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 
 [bundles]
 compose = ["compose.ui", "compose.ui.graphics", "compose.ui.tooling", "compose.material3", "compose.viewmodel", "coil-compose", "compose-lifecycle"]
 koin = ["koin-core", "koin-android", "koin-android-compose"]
 networking = ["retrofit", "retrofit-serialization", "serialization-json", "coroutines", "coroutines-android", "okhttp3"]
-test = ["test-mock-webserver", "test-coroutines", "test-truth"]
+test = ["test-mock-webserver", "test-coroutines", "test-truth", "test-mockk"]
