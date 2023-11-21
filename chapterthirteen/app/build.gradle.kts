@@ -6,6 +6,15 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        create("release") {
+            storeFile =
+                file("/Users/harun/AndroidStudioProjects/Mastering-Kotlin-for-Android/chapterthirteen/keystore/packt.jks")
+            storePassword = "android"
+            keyAlias = "packt"
+            keyPassword = "android"
+        }
+    }
     namespace = "com.packt.chapterthirteen"
     compileSdk = 34
 
@@ -19,6 +28,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        signingConfig = signingConfigs.getByName("release")
     }
 
     buildTypes {
