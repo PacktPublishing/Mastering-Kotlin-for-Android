@@ -29,4 +29,20 @@ jobs:
         - name: Build with Gradle
           run: ./gradlew assembleDebug
           working-directory: ./chapterfourteen
+
+        - name: Run ktlintFormat
+          run: ./gradlew ktlintFormat
+          working-directory: ./chapterfourteen
+
+        - name: Run ktlintCheck
+          run: ./gradlew ktlintCheck
+          working-directory: ./chapterfourteen
+
+        - name: Run detekt
+          run: ./gradlew detekt
+          working-directory: ./chapterfourteen
+
+        - name: Run unit tests
+          run: ./gradlew test
+          working-directory: ./chapterfourteen
     
