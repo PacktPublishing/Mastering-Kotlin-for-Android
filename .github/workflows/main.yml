@@ -23,13 +23,13 @@ jobs:
             cache: gradle
 
         - name: Grant execute permission for gradlew
-          run:
+          run: | 
             cd  chapterfourteen 
             chmod +x gradlew
           working-directory: chapterfourteen
          
         - name: Build with Gradle
-          run:
+          run: |
             cd  chapterfourteen 
             ./gradlew build
           working-directory: chapterfourteen
