@@ -28,7 +28,7 @@ jobs:
           working-directory: ./chapterfourteen
          
         - name: Build with Gradle
-          run: ./gradlew assembleDebug
+          run: ./gradlew bundleRelease
           working-directory: ./chapterfourteen
 
         - name: Run ktlintFormat
