@@ -27,6 +27,6 @@ jobs:
           working-directory: ./chapterfourteen
          
         - name: Build with Gradle
-          run: ./gradlew build
+          run: ./gradlew assembleDebug
           working-directory: ./chapterfourteen
     
