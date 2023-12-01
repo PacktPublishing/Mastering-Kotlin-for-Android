@@ -11,3 +11,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: set up JDK 11
+          uses: actions/setup-java@v3
+          with:
+            java-version: '11'
+            distribution: 'temurin'
+            cache: gradle
+
+        - name: Grant execute permission for gradlew
+          run:
+            cd  chapterfourteen 
+            chmod +x gradlew
+          working-directory: chapterfourteen
+         
+        - name: Build with Gradle
+          run:
+            cd  chapterfourteen 
+            ./gradlew build
+          working-directory: chapterfourteen
+    
