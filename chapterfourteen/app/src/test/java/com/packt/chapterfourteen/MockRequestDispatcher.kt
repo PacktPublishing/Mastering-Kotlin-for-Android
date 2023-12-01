@@ -1,11 +1,11 @@
 package com.packt.chapterfourteen
 
 import com.google.common.io.Resources
+import java.io.File
+import java.net.HttpURLConnection
 import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.RecordedRequest
-import java.io.File
-import java.net.HttpURLConnection
 
 class MockRequestDispatcher : Dispatcher() {
 
