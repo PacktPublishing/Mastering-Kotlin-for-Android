@@ -29,7 +29,8 @@ class PetListItemTest {
                         isFavorite = false
                     ),
                     onPetClicked = { },
-                    onFavoriteClicked = {})
+                    onFavoriteClicked = {}
+                )
             }
             // Assertions using tags
             onNodeWithTag("PetListItemCard").assertExists()

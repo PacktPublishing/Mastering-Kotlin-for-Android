@@ -39,7 +39,6 @@ class CatsAPITest {
         catsAPI = retrofit.create(CatsAPI::class.java)
     }
 
-
     @Test
     fun `fetchCats() returns a list of cats`() = runTest {
         val response = catsAPI.fetchCats("cute")

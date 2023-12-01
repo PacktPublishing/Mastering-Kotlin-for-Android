@@ -59,7 +59,7 @@ fun PetListItem(
         modifier = Modifier
             .fillMaxWidth()
             .padding(6.dp)
-            .testTag("PetListItemCard"),
+            .testTag("PetListItemCard")
     ) {
         Column(
             modifier = Modifier

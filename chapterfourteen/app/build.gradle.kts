@@ -9,7 +9,10 @@ android {
     signingConfigs {
         create("release") {
             storeFile =
-                file("/Users/harun/AndroidStudioProjects/Mastering-Kotlin-for-Android/chapterfourteen/keystore/packt.jks")
+                file(
+                    "/Users/harun/AndroidStudioProjects/Mastering-Kotlin-for-Android" +
+                        "/chapterfourteen/keystore/packt.jks"
+                )
             storePassword = "android"
             keyAlias = "packt"
             keyPassword = "android"
