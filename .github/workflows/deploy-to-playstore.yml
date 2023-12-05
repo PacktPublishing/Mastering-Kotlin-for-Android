@@ -25,7 +25,7 @@ jobs:
 
       - name: Assemble Release Bundle
         working-directory: chapterfourteen
-        run: ./gradlew bundleRelease
+        run: ./gradlew bundleRelease --output chapterfourteen/build/outputs/bundle/release
 
       - name: Deploy to Internal Testing
         uses: r0adkll/upload-google-play@v1.1.1
