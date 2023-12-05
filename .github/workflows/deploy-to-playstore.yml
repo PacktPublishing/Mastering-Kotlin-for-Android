@@ -30,7 +30,7 @@ jobs:
       - name: Sign Release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: chapterfourteen/build/outputs/bundle/release
+          releaseDirectory: chapterfourteen/app/build/outputs/bundle/release
           signingKeyBase64: ${{ secrets.PLAYSTORE_SIGNING_KEY }}
           alias: ${{ secrets.KEY_ALIAS }}
           keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
@@ -41,7 +41,7 @@ jobs:
         with:
           serviceAccountJsonPlainText: ${{ secrets.GOOGLE_SERVICES_JSON }}
           packageName: com.packt.chapterthirteen
-          releaseFiles: chapterfourteen/build/outputs/bundle/release/app-release.aab
+          releaseFiles: chapterfourteen/app/build/outputs/bundle/release/app-release.aab
           track: internal
           whatsNewDirectory: whatsnew/
           status: completed
