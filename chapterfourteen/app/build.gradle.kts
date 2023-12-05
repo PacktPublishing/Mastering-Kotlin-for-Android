@@ -15,11 +15,11 @@ android {
             keyPassword = "android"
         }
     }
-    namespace = "com.packt.chapterthirteen"
+    namespace = "com.packt.chapterfourteen"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.packt.chapterfourteen"
+        applicationId = "com.packt.chapterthirteen"
         minSdk = 24
         targetSdk = 34
         versionCode = 2
