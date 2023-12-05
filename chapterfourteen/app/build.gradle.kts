@@ -9,7 +9,7 @@ android {
     signingConfigs {
         create("release") {
             storeFile =
-                file("../chapterfourteen/keystore/packt.jks")
+                file("../keystore/packt.jks")
             storePassword = "android"
             keyAlias = "packt"
             keyPassword = "android"
