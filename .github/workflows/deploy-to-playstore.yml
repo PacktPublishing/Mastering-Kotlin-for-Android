@@ -25,7 +25,16 @@ jobs:
 
       - name: Assemble Release Bundle
         working-directory: chapterfourteen
-        run: ./gradlew bundleRelease --output chapterfourteen/build/outputs/bundle/release
+        run: ./gradlew bundleRelease
+
+      - name: Sign Release
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/bundle/release
+          signingKeyBase64: ${{ secrets.PLAYSTORE_SIGNING_KEY }}
+          alias: ${{ secrets.KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
 
       - name: Deploy to Internal Testing
         uses: r0adkll/upload-google-play@v1.1.1
