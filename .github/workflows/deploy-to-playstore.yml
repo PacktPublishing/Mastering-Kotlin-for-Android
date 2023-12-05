@@ -43,5 +43,4 @@ jobs:
           packageName: com.packt.chapterthirteen
           releaseFiles: chapterfourteen/app/build/outputs/bundle/release/app-release.aab
           track: internal
-          whatsNewDirectory: whatsnew/
           status: completed
