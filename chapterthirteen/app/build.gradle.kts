@@ -8,8 +8,7 @@ plugins {
 android {
     signingConfigs {
         create("release") {
-            storeFile =
-                file("/Users/harun/AndroidStudioProjects/Mastering-Kotlin-for-Android/chapterthirteen/keystore/packt.jks")
+            storeFile = file("../keystore/packt.jks")
             storePassword = "android"
             keyAlias = "packt"
             keyPassword = "android"
