@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AppInsightsSettings">
+    <option name="selectedTabId" value="Firebase Crashlytics" />
     <option name="tabSettings">
       <map>
         <entry key="Android Vitals">
@@ -8,7 +9,7 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.apolloagriculture.android.fieldvisit" />
+                  <option name="appId" value="com.packt.chapterthirteen" />
                 </ConnectionSetting>
               </option>
               <option name="failureTypes">
@@ -27,10 +28,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.packt.chapterthirteen" />
+                  <option name="mobileSdkAppId" value="1:531017849070:android:a10c12b25e5c0745b2fbff" />
+                  <option name="projectId" value="pets-app-1d224" />
+                  <option name="projectNumber" value="531017849070" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlinx-serialization")
     id("com.google.devtools.ksp")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -87,6 +89,8 @@ dependencies {
     implementation(libs.androidx.window)
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
+    implementation(libs.firebase.crashlytics)
+    implementation(libs.firebase.analytics)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
