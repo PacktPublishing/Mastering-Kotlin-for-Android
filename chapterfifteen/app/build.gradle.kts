@@ -91,6 +91,7 @@ dependencies {
     implementation(libs.room.ktx)
     implementation(libs.firebase.crashlytics)
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.messaging)
     debugImplementation(libs.leakcanary.android)
     debugImplementation(libs.chucker)
     releaseImplementation(libs.chucker.no.op)
