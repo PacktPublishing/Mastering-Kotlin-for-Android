@@ -1,10 +1,10 @@
 [versions]
 coreKtx = "1.12.0"
-lifecycle = "2.6.2"
-activity = "1.8.1"
+lifecycle = "2.7.0"
+activity = "1.8.2"
 composeBom = "2023.10.01"
-koin = "3.5.0"
-koinCompose = "3.5.0"
+koin = "3.5.3"
+koinCompose = "3.5.3"
 junit = "4.13.2"
 junitExt = "1.1.5"
 espresso = "3.5.1"
@@ -13,8 +13,8 @@ retrofitSerialiazationConverter = "1.0.0"
 serializationJson = "1.5.1"
 coroutines = "1.7.3"
 okhttp3 = "4.11.0"
-room = "2.6.0"
-work = "2.8.1"
+room = "2.6.1"
+work = "2.9.0"
 mockWebServer = "5.0.0-alpha.2"
 coroutinesTest = "1.7.3"
 truth = "1.1.5"
@@ -44,10 +44,10 @@ coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
 okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
-coil-compose = "io.coil-kt:coil-compose:2.4.0"
+coil-compose = "io.coil-kt:coil-compose:2.5.0"
 compose-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
-compose-navigation = "androidx.navigation:navigation-compose:2.7.5"
-compose-window-size = "androidx.compose.material3:material3-window-size-class:1.2.0-alpha11"
+compose-navigation = "androidx.navigation:navigation-compose:2.7.6"
+compose-window-size = "androidx.compose.material3:material3-window-size-class:1.2.0-beta02"
 androidx-window = "androidx.window:window:1.2.0"
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
