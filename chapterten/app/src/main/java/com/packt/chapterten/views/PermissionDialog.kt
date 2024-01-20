@@ -55,7 +55,7 @@ fun PermissionDialog(
                 permissionAction(PermissionAction.PermissionDenied)
             },
             title = { Text(text = "Permission Required") },
-            text = { Text(text = "his app requires the location permission to be granted.") },
+            text = { Text(text = "This app requires the location permission to be granted.") },
             confirmButton = {
                 Button(
                     onClick = {
