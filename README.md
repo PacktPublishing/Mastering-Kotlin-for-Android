@@ -41,14 +41,14 @@ Written with the best practices recommended by the Android Team at Google in min
 
 With the following software and hardware list you can run all code files present in the book (Chapter 1-15).
 
-### Software and Hardware List
+## Software and Hardware List
 
 | Chapter  | Software required                            | OS required                      |
 | -------- | ---------------------------------------------| ---------------------------------|
 | 1-15     | Android Studio Hedgehog or later versions    | Windows, macOS, or Linux         |
 
 
-### Related products <Other books you may enjoy>
+## Related products <Other books you may enjoy>
 * How to Build Android Apps with Kotlin [[Packt]](https://www.packtpub.com/product/how-to-build-android-apps-with-kotlin-second-edition/9781837634934) [[Amazon]](https://www.amazon.in/dp/1837634939)
 
 * Kickstart Modern Android Development with Jetpack and Kotlin [[Packt]](https://www.packtpub.com/product/kickstart-modern-android-development-with-jetpack-and-kotlin/9781801811071) [[Amazon]](https://www.amazon.in/dp/1801811075)
