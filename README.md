@@ -16,8 +16,10 @@ This book covers the following exciting features:
 * Publish, monitor, and improve your apps in the Google Play Store
 * Perform long-running operations with WorkManager and persist data in your app
 * Use CI/CD with GitHub Actions and distribute test builds with Firebase App Distribution
+* Find out how to add linting and static checks on CI/CD pipelines
 
-Find out how to add linting and static checks on CI/CD pipelines
+If you feel this book is for you, get your [copy](https://www.amazon.com/dp/1837631719) today!
+
 <a href="https://www.packtpub.com/?utm_source=github&utm_medium=banner&utm_campaign=GitHubBanner"><img src="https://raw.githubusercontent.com/PacktPublishing/GitHub/master/GitHub.png" 
 alt="https://www.packtpub.com/" border="5" /></a>
 
@@ -37,7 +39,7 @@ class PetsViewModel: ViewModel() {
 
 Written with the best practices recommended by the Android Team at Google in mind, this book will help you master Kotlin and use its powerful language features, libraries, tools, and APIs to elevate your Android apps.
 
-With the following software and hardware list you can run all code files present in the book (Chapter 1-13).
+With the following software and hardware list you can run all code files present in the book (Chapter 1-15).
 
 ### Software and Hardware List
 
