@@ -49,9 +49,9 @@ With the following software and hardware list you can run all code files present
 
 
 ## Related products <Other books you may enjoy>
-* How to Build Android Apps with Kotlin [[Packt]](https://www.packtpub.com/product/how-to-build-android-apps-with-kotlin-second-edition/9781837634934) [[Amazon]](https://www.amazon.in/dp/1837634939)
+* How to Build Android Apps with Kotlin [[Packt]](https://www.packtpub.com/product/how-to-build-android-apps-with-kotlin-second-edition/9781837634934) [[Amazon]](https://www.amazon.com/dp/1837634939)
 
-* Kickstart Modern Android Development with Jetpack and Kotlin [[Packt]](https://www.packtpub.com/product/kickstart-modern-android-development-with-jetpack-and-kotlin/9781801811071) [[Amazon]](https://www.amazon.in/dp/1801811075)
+* Kickstart Modern Android Development with Jetpack and Kotlin [[Packt]](https://www.packtpub.com/product/kickstart-modern-android-development-with-jetpack-and-kotlin/9781801811071) [[Amazon]](https://www.amazon.com/dp/1801811075)
 
 ## Get to Know the Author
 **Harun Wangereka**
