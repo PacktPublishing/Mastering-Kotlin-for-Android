@@ -53,6 +53,9 @@ With the following software and hardware list you can run all code files present
 
 * Kickstart Modern Android Development with Jetpack and Kotlin [[Packt]](https://www.packtpub.com/product/kickstart-modern-android-development-with-jetpack-and-kotlin/9781801811071) [[Amazon]](https://www.amazon.com/dp/1801811075)
 
+##Errata
+* Page 18, On the bottom: **Also, some features are only available in newer SDK versions, so we have to add a fallback mechanism for devices for** _should be_ **Also, some features are only available in newer SDK versions, so in most cases we have to add a fallback mechanism for devices using SDK versions where the feature is not available.**
+
 ## Get to Know the Author
 **Harun Wangereka**
 is a Google Developer Expert for Android and an Android engineer with over seven years of experience and currently working at Apollo Agriculture. Harun is passionate about Android development, never tired of learning, building the tech community, and helping other developers upscale their skills. He is a co-organizer at Droidcon Kenya and a former Kotlin Kenya and Android254 co-organizer. Through these communities, he has been able to impact thousands of developers. He is also an Android author at Kodeco where he has written 8 articles, published a book; Saving Data on Android, Second Edition, and is also a video course instructor. He has given numerous sessions on Android and Kotlin across different communities worldwide.
